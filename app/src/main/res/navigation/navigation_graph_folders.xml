@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_graph"
+    app:startDestination="@id/foldersFragment">
+    <fragment
+        android:id="@+id/foldersFragment"
+        android:name="com.example.imagegallerytest.views.fragments.FoldersFragment"
+        tools:layout="@layout/fragment_folders"
+        android:label="BrowseFoldersFragment" >
+        <action
+            android:id="@+id/action_foldersFragment_to_navigationGraphFiles"
+            app:destination="@id/navigation_graph_files" />
+        <action
+            android:id="@+id/action_foldersFragment_to_userPreferencesFragment"
+            app:destination="@id/userPreferencesFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/userPreferencesFragment"
+        android:name="com.example.imagegallerytest.views.fragments.UserPreferencesFragment"
+        android:label="UserPreferencesFragment" >
+        <action
+            android:id="@+id/action_userPreferencesFragment_to_foldersFragment"
+            app:destination="@id/foldersFragment" />
+        <action
+            android:id="@+id/action_userPreferencesFragment_to_navigationGraphFiles"
+            app:destination="@id/navigation_graph_files" />
+    </fragment>
+
+    <navigation
+        android:id="@+id/navigation_graph_files"
+        app:startDestination="@id/filesFragment">
+        <fragment
+            android:id="@+id/imageFragment"
+            android:name="com.example.imagegallerytest.views.fragments.ImageFragment"
+            android:label="ImageFragment">
+            <action
+                android:id="@+id/action_imageFragment_to_browseFilesFragment"
+                app:destination="@id/filesFragment" />
+        </fragment>
+        <fragment
+            android:id="@+id/filesFragment"
+            android:name="com.example.imagegallerytest.views.fragments.FilesFragment"
+            android:label="BrowseFilesFragment"
+            tools:layout="@layout/fragment_files">
+            <action
+                android:id="@+id/action_browseFilesFragment_to_browseFoldersFragment"
+                app:destination="@id/foldersFragment" />
+            <action
+                android:id="@+id/action_browseFilesFragment_to_imageFragment"
+                app:destination="@id/imageFragment" />
+            <action
+                android:id="@+id/action_filesFragment_to_userPreferencesFragment"
+                app:destination="@id/userPreferencesFragment" />
+        </fragment>
+    </navigation>
+</navigation>

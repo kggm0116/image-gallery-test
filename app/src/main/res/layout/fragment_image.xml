@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+    </data>
+
+    <androidx.constraintlayout.motion.widget.MotionLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layoutDescription="@xml/scene_fragment_image"
+        android:background="#000">
+
+        <ImageView
+            android:id="@+id/image_far_left"
+            style="@style/ImageCarousel_ImageView"
+            tools:src="@drawable/ic_baseline_image_24" />
+        <ImageView
+            android:id="@+id/image_left"
+            style="@style/ImageCarousel_ImageView"
+            tools:src="@drawable/ic_baseline_image_24" />
+        <ImageView
+            android:id="@+id/image_center"
+            style="@style/ImageCarousel_ImageView"
+            tools:src="@drawable/ic_baseline_image_24" />
+        <ImageView
+            android:id="@+id/image_right"
+            style="@style/ImageCarousel_ImageView"
+            tools:src="@drawable/ic_baseline_image_24" />
+        <ImageView
+            android:id="@+id/image_far_right"
+            style="@style/ImageCarousel_ImageView"
+            tools:src="@drawable/ic_baseline_image_24" />
+
+        <androidx.constraintlayout.helper.widget.Carousel
+            android:id="@+id/imagesCarousel"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:carousel_forwardTransition="@+id/forward"
+            app:carousel_backwardTransition="@+id/backward"
+            app:carousel_previousState="@+id/prev"
+            app:carousel_nextState="@+id/next"
+            app:carousel_firstView="@+id/image_center"
+            app:carousel_infinite="true"
+            app:constraint_referenced_ids="image_left,image_center,image_right"/>
+
+    </androidx.constraintlayout.motion.widget.MotionLayout>
+</layout>

@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+option java_package = "com.example.imagegallerytest";
+option java_multiple_files = true;
+
+message UserPreferences {
+  int32 folders_grid_columns_portrait = 1;
+  int32 folders_grid_columns_landscape = 2;
+  int32 files_grid_columns_portrait = 3;
+  int32 files_grid_columns_landscape = 4;
+}
