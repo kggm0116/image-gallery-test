@@ -6,7 +6,7 @@
     <data>
         <variable
             name="folder"
-            type="com.example.imagegallerytest.data.entities.Folder" />
+            type="ru.kggm.imagegallerytest.data.entities.Folder" />
     </data>
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout

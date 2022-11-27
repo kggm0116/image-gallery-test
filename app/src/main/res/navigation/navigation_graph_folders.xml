@@ -6,7 +6,7 @@
     app:startDestination="@id/foldersFragment">
     <fragment
         android:id="@+id/foldersFragment"
-        android:name="com.example.imagegallerytest.views.fragments.FoldersFragment"
+        android:name="ru.kggm.imagegallerytest.views.fragments.FoldersFragment"
         tools:layout="@layout/fragment_folders"
         android:label="BrowseFoldersFragment" >
         <action
@@ -19,7 +19,7 @@
 
     <fragment
         android:id="@+id/userPreferencesFragment"
-        android:name="com.example.imagegallerytest.views.fragments.UserPreferencesFragment"
+        android:name="ru.kggm.imagegallerytest.views.fragments.UserPreferencesFragment"
         android:label="UserPreferencesFragment" >
         <action
             android:id="@+id/action_userPreferencesFragment_to_foldersFragment"
@@ -34,7 +34,7 @@
         app:startDestination="@id/filesFragment">
         <fragment
             android:id="@+id/imageFragment"
-            android:name="com.example.imagegallerytest.views.fragments.ImageFragment"
+            android:name="ru.kggm.imagegallerytest.views.fragments.ImageFragment"
             android:label="ImageFragment">
             <action
                 android:id="@+id/action_imageFragment_to_browseFilesFragment"
@@ -42,7 +42,7 @@
         </fragment>
         <fragment
             android:id="@+id/filesFragment"
-            android:name="com.example.imagegallerytest.views.fragments.FilesFragment"
+            android:name="ru.kggm.imagegallerytest.views.fragments.FilesFragment"
             android:label="BrowseFilesFragment"
             tools:layout="@layout/fragment_files">
             <action
