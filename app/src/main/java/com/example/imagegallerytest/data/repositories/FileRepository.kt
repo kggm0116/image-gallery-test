@@ -16,7 +16,6 @@ class FileRepository(private val fileDao: FileDao) {
     @WorkerThread
     suspend fun insert(files: List<File>) {
         val time = measureTimeMillis { fileDao.insert(files) }
-        Log.println(Log.INFO, "", "Inserted ${files.size} in ${time}ms")
     }
     @WorkerThread
     suspend fun update(file: File) {
@@ -25,7 +24,6 @@ class FileRepository(private val fileDao: FileDao) {
     @WorkerThread
     suspend fun update(files: List<File>) {
         val time = measureTimeMillis { fileDao.update(files) }
-        Log.println(Log.INFO, "", "Updated ${files.size} in ${time}ms")
     }
     @WorkerThread
     suspend fun delete(file: File) {
@@ -34,7 +32,6 @@ class FileRepository(private val fileDao: FileDao) {
     @WorkerThread
     suspend fun delete(files: List<File>) {
         val time = measureTimeMillis { fileDao.delete(files) }
-        Log.println(Log.INFO, "", "Deleted ${files.size} in ${time}ms")
     }
     @WorkerThread
     suspend fun deleteExcept(files: List<File>) {
