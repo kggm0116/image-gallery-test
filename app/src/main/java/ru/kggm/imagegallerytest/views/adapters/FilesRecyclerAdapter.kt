@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions.withCrossFade
 import com.example.imagegallerytest.R
 import com.example.imagegallerytest.databinding.RvItemFileBinding
@@ -24,17 +25,10 @@ class FilesRecyclerAdapter
         private val binding: RvItemFileBinding = DataBindingUtil.bind(itemView)!!
 
         fun bind(file: File) {
-//            ImageRequest.Builder(itemView.context)
-//                .target(binding.thumbnail)
-//                .crossfade(true)
-//                .data(file.uri)
-//                .build()
-//                .also {
-//                    itemView.context.imageLoader.enqueue(it)
-//                }
             Glide.with(itemView)
                 .load(file.uri)
-                .transition(withCrossFade())
+                .transition(withCrossFade(200))
+                .diskCacheStrategy(DiskCacheStrategy.DATA)
                 .into(binding.thumbnail)
         }
 

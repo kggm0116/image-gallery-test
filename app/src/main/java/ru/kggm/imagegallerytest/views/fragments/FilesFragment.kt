@@ -66,7 +66,7 @@ class FilesFragment : Fragment() {
         binding.swipeRefreshLayout.setOnRefreshListener { onRefresh() }
         filesAdapter.setFileOnClickListener(FilesRecyclerAdapter.OnClickListener { fileOnClick(it) })
         binding.toolbar.setOnMenuItemClickListener { menuItemOnClick(it) }
-        binding.files.setItemViewCacheSize(0)
+        binding.files.setItemViewCacheSize(100)
 
         if (resources.configuration.orientation == Configuration.ORIENTATION_LANDSCAPE) {
             userPreferencesViewModel.filesGridColumnsLandscape.observe(viewLifecycleOwner) { onLandscapeGridColumnCountChanged() }

@@ -20,7 +20,7 @@ class FileSystemUtilities {
             return DocumentFile.fromTreeUri(context, uri)!!.exists()
         }
 
-        fun Folder.getChildren(context: Context, nameFilter: Regex? = null): List<File> {
+        fun Folder.getChildren(context: Context): List<File> {
             val childrenUri = DocumentsContract.buildChildDocumentsUriUsingTree(
                 this.uri,
                 DocumentsContract.getDocumentId(this.uri)
@@ -34,8 +34,6 @@ class FileSystemUtilities {
             )?.use {
                 val results = mutableListOf<File>()
                 while (it.moveToNext()) {
-                    if (nameFilter == null || !nameFilter.matches(it.getString(1)))
-                        continue
                     val uri = DocumentsContract.buildDocumentUriUsingTree(
                         this.uri,
                         it.getString(0)

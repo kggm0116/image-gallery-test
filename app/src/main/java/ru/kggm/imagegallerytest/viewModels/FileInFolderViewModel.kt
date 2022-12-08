@@ -16,6 +16,7 @@ class FileInFolderViewModel(
             folders.first { folderWithFiles -> folderWithFiles.folder == folder }
                 .files.sortedBy { it.name }
         }
+        .distinctUntilChanged()
 
     var openedFile: File? = null
     var closedFile: MutableLiveData<File?> = MutableLiveData(null)
