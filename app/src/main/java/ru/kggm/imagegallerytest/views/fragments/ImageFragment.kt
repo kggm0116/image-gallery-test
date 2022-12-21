@@ -56,13 +56,9 @@ class ImageFragment : Fragment() {
         binding.imagesCarousel.setAdapter(object : Carousel.Adapter {
             override fun count(): Int = orderedFiles.count()
             val imageLoader = ImageLoader.Builder(requireContext())
-                .crossfade(false)
+                .crossfade(100)
                 .build()
             override fun populate(view: View, index: Int) {
-                // Setting source natively hangs UI
-                // Glide produces flicker
-                // Coil works fine, but images can't load fast enough on quick swipes (might apply to Glide as well)
-                // Custom image sources handler is hard to implement, and would it even help?
                 (view as ImageView).load(getFile(index)?.uri, imageLoader)
             }
             override fun onNewItem(index: Int) { }

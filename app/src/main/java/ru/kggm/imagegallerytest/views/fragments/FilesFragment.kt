@@ -88,7 +88,7 @@ class FilesFragment : Fragment() {
     }
 
     private fun onRefresh() {
-        folderViewModel.scanFolders(requireContext())
+        folderViewModel.scanFolders(requireContext(), listOf(".jpg"))
         binding.swipeRefreshLayout.isRefreshing = false
     }
 

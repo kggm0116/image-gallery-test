@@ -44,7 +44,12 @@
             app:carousel_nextState="@+id/next"
             app:carousel_firstView="@+id/image_center"
             app:carousel_infinite="true"
-            app:constraint_referenced_ids="image_left,image_center,image_right"/>
+            app:constraint_referenced_ids="
+                image_far_left,
+                image_left,
+                image_center,
+                image_right,
+                image_far_right"/>
 
     </androidx.constraintlayout.motion.widget.MotionLayout>
 </layout>

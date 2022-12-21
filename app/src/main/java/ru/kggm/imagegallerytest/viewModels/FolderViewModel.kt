@@ -25,7 +25,7 @@ class FolderViewModel(
 
     fun insert(folder: Folder, context: Context) = viewModelScope.launch {
         if (folderRepository.insert(folder) != -1L) {
-            scanFolders(context)
+            scanFolders(context, listOf(".jpg")) // TODO("Pass extensions from user prefs")
         }
     }
 
@@ -38,7 +38,7 @@ class FolderViewModel(
         }.also { folderRepository.delete(it) }
     }
 
-    fun scanFolders(context: Context) = viewModelScope.launch {
+    fun scanFolders(context: Context, fileExtensions: List<String>) = viewModelScope.launch {
         folderRepository.allFoldersWithFiles.first { true }.forEach { folderWithFiles ->
             val folder = folderWithFiles.folder
             val oldFiles = folderWithFiles.files
@@ -47,10 +47,9 @@ class FolderViewModel(
                 folderRepository.delete(folder)
                 return@forEach
             }
-            val imageNameRegex = Regex(".*\\.(jpg|jpeg|png)$") // User Preference
 
             launch(Dispatchers.Default) {
-                val currentFiles = folder.getChildren(context, imageNameRegex)
+                val currentFiles = folder.getChildren(context, Regex(".*\\.${fileExtensions.joinToString("|")}$"))
                 val existingFiles = currentFiles
                     .filter { oldFiles.any { file -> file.uri == it.uri} }
                 val newFiles = currentFiles
