@@ -1,7 +1,7 @@
-![Demonstration](https://user-images.githubusercontent.com/119162938/208895487-8827eab7-8260-4640-9c16-d50e29f7059e.mp4)
-
 Простое приложение-галерея для просмотра изображений с диска.
 Создал в процессе самостоятельного изучения Android и Kotlin.
+
+https://user-images.githubusercontent.com/119162938/208895487-8827eab7-8260-4640-9c16-d50e29f7059e.mp4
 
 Функционал:
 - Добавление и удаление папок
