@@ -1,0 +1,44 @@
+package ru.kggm.domain.usecases.preferences
+
+import ru.kggm.domain.entities.UserPreferences
+import ru.kggm.domain.repositories.*
+import ru.kggm.domain.utility.FlowExtensions.Companion.takeLast
+import javax.inject.Inject
+
+class UpdateUserPreferencesUseCaseWithBuilder @Inject constructor(
+    private val userPreferencesRepository: UserPreferencesRepository
+) {
+    suspend operator fun invoke(block: UserPreferencesBuilder.() -> Unit) {
+        userPreferencesRepository.getPreferences().takeLast()
+            .let {
+                UserPreferencesBuilder(
+                    folderColumnCountLandscape = it.folderColumnCountLandscape,
+                    folderColumnCountPortrait = it.folderColumnCountPortrait,
+                    fileColumnCountLandscape = it.fileColumnCountLandscape,
+                    fileColumnCountPortrait = it.fileColumnCountPortrait,
+                    supportedFileExtensions = it.supportedFileExtensions
+                )
+                    .apply(block)
+                    .build()
+                    .also { changedPreferences ->
+                        userPreferencesRepository.setPreferences(changedPreferences)
+                    }
+            }
+    }
+
+    class UserPreferencesBuilder(
+        var folderColumnCountLandscape: Int,
+        var folderColumnCountPortrait: Int,
+        var fileColumnCountLandscape: Int,
+        var fileColumnCountPortrait: Int,
+        var supportedFileExtensions: List<String>,
+    ) {
+        fun build() = UserPreferences(
+            folderColumnCountLandscape = folderColumnCountPortrait,
+            folderColumnCountPortrait = folderColumnCountPortrait,
+            fileColumnCountLandscape = fileColumnCountLandscape,
+            fileColumnCountPortrait = fileColumnCountPortrait,
+            supportedFileExtensions = supportedFileExtensions
+        )
+    }
+}

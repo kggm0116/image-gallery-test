@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/menuItemMoreColumns"
+        android:title="@string/more_columns_text"/>
+    <item
+        android:id="@+id/menuItemLessColumns"
+        android:title="@string/less_columns_text"/>
+    <item
+        android:id="@+id/menuItemSettings"
+        android:title="@string/settings_text"/>
+</menu>

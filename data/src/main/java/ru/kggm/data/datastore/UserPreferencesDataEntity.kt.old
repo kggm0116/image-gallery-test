@@ -1,0 +1,48 @@
+package ru.kggm.data.datastore
+
+import androidx.datastore.core.DataStore
+import kotlinx.coroutines.flow.take
+import ru.kggm.data.UserPreferencesData
+//import ru.kggm.data.EntityGridSizesPreference
+import javax.inject.Inject
+
+//class UserPreferencesDataEntity @Inject constructor(
+//    private val preferences: DataStore<UserPreferencesData>
+//) {
+//    companion object {
+//        const val TRANSLATE_SWITCH = "translate_to_ru"
+//        const val REFRESH_INTERVAL_BAR = "refresh_interval"
+//        const val IS_PREFERENCES_CHANGED = "preferences_changed"
+//    }
+//
+//    val last get() = preferences.data.take(1)
+//
+//    suspend fun setGridSizeFilesLandscape(value: Int) = preferences.updateData {
+//        it.toBuilder().setGridSizeFilesLandscape(value).build()
+//    }
+//
+//    suspend fun setGridSizeFilesPortrait(value: Int) = preferences.updateData {
+//        it.toBuilder().setGridSizeFilesPortrait(value).build()
+//    }
+//
+//    suspend fun setGridSizeFoldersLandscape(value: Int) = preferences.updateData {
+//        it.toBuilder().setGridSizeFoldersLandscape(value).build()
+//    }
+//
+//    suspend fun setGridSizeFoldersPortrait(value: Int) = preferences.updateData {
+//        it.toBuilder().setGridSizeFoldersPortrait(value).build()
+//    }
+//
+//    suspend fun setSupportedFileExtensions(value: List<String>) = preferences.updateData {
+//        it.toBuilder().addAllSupportedFileExtensions(value).build()
+//    }
+//}
+
+//    val saved get() = settings.data.take(1)
+
+//    fun checkNeedSync(cls: String) = saved.map {
+//        it.lastSyncMap[cls]?.run {
+//            System.currentTimeMillis() - this > saved.refreshInterval
+//        } ?: true
+//    }
+//}

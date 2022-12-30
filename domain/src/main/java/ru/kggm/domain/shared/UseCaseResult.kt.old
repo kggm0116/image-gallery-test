@@ -1,0 +1,14 @@
+package ru.kggm.domain.shared
+
+typealias EmptyUseCaseResult = UseCaseResult<Unit>
+
+sealed class UseCaseResult<T>(
+    val data: T? = null,
+    val message: String? = null
+) {
+    companion object {
+        const val DEFAULT_MESSAGE = "Unspecified error"
+    }
+    class Success<T>(data: T? = null): UseCaseResult<T>(data = data)
+    class Error<T>(message: String? = DEFAULT_MESSAGE): UseCaseResult<T>(message = message)
+}

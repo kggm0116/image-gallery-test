@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option java_package = "ru.kggm.data";
+option java_multiple_files = true;
+
+message UserPreferencesData {
+  int32 grid_size_folders_portrait = 1;
+  int32 grid_size_folders_landscape = 2;
+  int32 grid_size_files_portrait = 3;
+  int32 grid_size_files_landscape = 4;
+  repeated string supported_file_extensions = 5;
+}

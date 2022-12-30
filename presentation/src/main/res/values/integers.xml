@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="preferences_files_grid_min_column_count_landscape">3</integer>
+    <integer name="preferences_files_grid_min_column_count_portrait">2</integer>
+    <integer name="preferences_folders_grid_min_column_count_landscape">3</integer>
+    <integer name="preferences_folders_grid_min_column_count_portrait">2</integer>
+    <integer name="preferences_files_grid_max_column_count_landscape">16</integer>
+    <integer name="preferences_files_grid_max_column_count_portrait">12</integer>
+    <integer name="preferences_folders_grid_max_column_count_landscape">16</integer>
+    <integer name="preferences_folders_grid_max_column_count_portrait">12</integer>
+</resources>

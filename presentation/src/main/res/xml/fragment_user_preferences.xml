@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+About preferences: https://medium.com/google-developer-experts/exploring-android-jetpack-preferences-8bcb0b7bdd14
+Buttons: https://stackoverflow.com/questions/5298370/how-to-add-a-button-to-a-preferencescreen
+-->
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+<!--    <PreferenceCategory android:layout="@layout/template_settings" />-->
+    <PreferenceCategory
+        android:title="@string/preference_category_title_presentation">
+        <SeekBarPreference
+            android:key="@string/preference_key_folder_column_count_landscape"
+            android:title="@string/preference_title_folders_grid_columns_landscape"
+            app:min="@integer/preferences_folders_grid_min_column_count_landscape"
+            android:max="@integer/preferences_folders_grid_max_column_count_landscape"
+            app:seekBarIncrement="1"
+            app:showSeekBarValue="true"
+            tools:defaultValue="8" />
+        <SeekBarPreference
+            android:key="@string/preference_key_folder_column_count_portrait"
+            android:title="@string/preference_title_folders_grid_columns_portrait"
+            app:min="@integer/preferences_folders_grid_min_column_count_portrait"
+            android:max="@integer/preferences_folders_grid_max_column_count_portrait"
+            app:seekBarIncrement="1"
+            app:showSeekBarValue="true"
+            tools:defaultValue="6" />
+        <SeekBarPreference
+            android:key="@string/preference_key_file_column_count_landscape"
+            android:title="@string/preference_title_files_grid_columns_landscape"
+            app:min="@integer/preferences_files_grid_min_column_count_landscape"
+            android:max="@integer/preferences_files_grid_max_column_count_landscape"
+            app:seekBarIncrement="1"
+            app:showSeekBarValue="true"
+            tools:defaultValue="8" />
+        <SeekBarPreference
+            android:key="@string/preference_key_file_column_count_portrait"
+            android:title="@string/preference_title_files_grid_columns_portrait"
+            app:min="@integer/preferences_files_grid_min_column_count_portrait"
+            android:max="@integer/preferences_files_grid_max_column_count_portrait"
+            app:seekBarIncrement="1"
+            app:showSeekBarValue="true"
+            tools:defaultValue="6" />
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="@string/preference_category_title_system">
+        <EditTextPreference
+            android:key="@string/preference_key_supported_file_extensions"
+            android:title="@string/preference_title_supported_image_extensions"
+            tools:useSimpleSummaryProvider="true"
+            tools:defaultValue=".jpg .png" />
+    </PreferenceCategory>
+
+</PreferenceScreen>

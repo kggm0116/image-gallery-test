@@ -1,0 +1,20 @@
+<resources>
+
+    <style name="Widget.Theme.AppCompat.NoActionBar.ButtonBar.Fullscreen" parent="">
+        <item name="android:background">@color/black_overlay</item>
+        <item name="android:buttonBarStyle">?android:attr/buttonBarStyle</item>
+    </style>
+
+    <style name="ImageCarousel_ImageView">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+<!--        <item name="android:gravity">center</item>-->
+        <item name="android:keepScreenOn">true</item>
+        <item name="android:adjustViewBounds">true</item>
+<!--        <item name="android:scaleType">fitCenter</item>-->
+        <item name="android:contentDescription">@string/image_content_description</item>
+        <item name="backgroundColor">@color/color_image_background</item>
+    </style>
+
+    <color name="color_image_background">#000</color>
+</resources>

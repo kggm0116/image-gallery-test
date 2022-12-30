@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">Image Gallery Test</string>
+    <string name="settings_text">Settings</string>
+    <string name="add_folder_button_description">Opens folder selection dialog</string>
+    <string name="folder_icon_description">A folder icon</string>
+    <string name="more_columns_text">More Columns</string>
+    <string name="less_columns_text">Less Columns</string>
+
+    <!-- Preference Keys -->
+    <string name="preference_key_folder_column_count_landscape">Key_Folder_Column_Count_Landscape</string>
+    <string name="preference_key_folder_column_count_portrait">Key_Folder_Column_Count_Portrait</string>
+    <string name="preference_key_file_column_count_landscape">Key_File_Column_Count_Landscape</string>
+    <string name="preference_key_file_column_count_portrait">Key_File_Column_Count_Portrait</string>
+    <string name="preference_key_supported_file_extensions">Key_Supported_File_Extensions</string>
+    <!-- Preference Titles -->
+    <string name="preference_category_title_presentation">Presentation</string>
+    <string name="preference_category_title_system">System</string>
+    <string name="preference_title_folders_grid_columns_landscape">Folders Grid Landscape</string>
+    <string name="preference_title_folders_grid_columns_portrait">Folders Grid Portrait</string>
+    <string name="preference_title_files_grid_columns_landscape">Files Grid Landscape</string>
+    <string name="preference_title_files_grid_columns_portrait">Files Grid Portrait</string>
+    <string name="preference_title_supported_image_extensions">Supported Image Extensions</string>
+    <!-- Preference Summaries -->
+
+    <!-- Fragment Titles -->
+    <string name="title_fragment_folders">Folders</string>
+    <string name="title_fragment_preferences">Preferences</string>
+
+    <string name="permission_read_storage_title">Permission required</string>
+    <string name="permission_read_storage_message">Permission to read storage is required for this app.</string>
+    <string name="file_icon_description">Image file preview</string>
+    <string name="image_content_description">Displays an image</string>
+</resources>
